@@ -1,0 +1,61 @@
+//Matrix operations
+#include<stdio.h>
+#include<stdlib.h>
+void add(int n,int m1[n][n],int m2[n][n]){
+    printf("\nMatrix Addition\n");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            printf("%d ",m1[i][j]+m2[i][j]);
+        }
+        printf("\n");
+    }
+}
+void mul(int n,int m1[n][n],int m2[n][n]){
+    int c[n][n];
+    printf("\nMatrix Multiplication\n");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            c[i][j]=0;
+            for(int k=0;k<n;k++){
+                c[i][j]=m1[i][j]*m2[i][j]; 
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            printf("%d ",c[i][j]);
+        }
+        printf("\n");
+    }
+}
+void transpose(int n,int m1[n][n]){
+    printf("\nMatrix Transpose\n");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            printf("%d ",m1[j][i]);
+        }
+        printf("\n");
+    }
+}
+int main(){
+    int n;
+    printf("Enter The size of Matrix:");
+    scanf("%d",&n);
+    int m1[n][n],m2[n][n];
+    printf("Enter Matrix one elements\n");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&m1[i][j]);
+        }
+    }
+        printf("Enter Matrix two elements\n");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&m2[i][j]);
+        }
+    }
+    add(n,m1,m2);
+    mul(n,m1,m2);
+    transpose(n,m1);
+return 0;
+}
