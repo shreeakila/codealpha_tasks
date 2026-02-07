@@ -1,0 +1,25 @@
+//Simple Calculator
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+  char ch;int a,b;
+  printf("1. +\n2. -\n3. *\n4./\n");
+  printf("Enter a operator:");
+  scanf("%c",&ch);
+  printf("Enter Two Numbers:");
+      scanf("%d %d",&a,&b);
+  switch(ch)
+  {   
+      
+      case '+': printf("Sum:%d",a+b);
+      break;
+      case '-':printf("Difference:%d",a-b);
+      break;
+      case '*':printf("Multiplication:%d",a*b);
+      break;
+      case '%':printf("Division:%d",a/b);
+      break;
+      default:printf("Enter Valid Opreator");
+}
+return 0;
+}
